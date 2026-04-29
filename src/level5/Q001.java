@@ -17,7 +17,7 @@ import java.util.HashMap;
 
 // 개인적 코멘트
 // 답안 제출하고 다른 사람 코드를 보는데 나와 비슷해서 너무 놀람. for(for()) 마저..
-class Solution {
+class Solution001 {
     static HashMap<Point,String> myPoints = new HashMap<>();
     static int x = 0;
     static int y = 0;

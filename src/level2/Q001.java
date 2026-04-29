@@ -13,7 +13,7 @@ import java.util.List;
 
 // 앞으로의 방향
 // 큐/스택에 대한 공부가 필요하다
-class Solution {
+class Solution001 {
 	public int[] solution(int[] progresses, int[] speeds) {
 		List<Integer> answerlist = new ArrayList<>();
 		List<Integer> yetlist = new ArrayList<>();

@@ -13,7 +13,7 @@ import java.util.*;
 // 앞으로의 방향
 // String 타입은 찾는데 시간이 많이 걸려서 Map이 도움이 된다.
 // 그런데 이거 DB로 관리하게 되지 않나..?
-class Solution {
+class Solution001 {
 	public String[] solution(String[] players, String[] callings) {
 		Map<String,Integer> playerMapS = new HashMap<>();
 		Map<Integer,String> playerMapI = new HashMap<>();
