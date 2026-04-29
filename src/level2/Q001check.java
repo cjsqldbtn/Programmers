@@ -13,6 +13,7 @@ import java.util.List;
 
 // 앞으로의 방향
 // 큐/스택에 대한 공부가 필요하다
+// 어느정도 준비가 되면 이 문제 다시 풀어보자.
 class Solution001 {
 	public int[] solution(int[] progresses, int[] speeds) {
 		List<Integer> answerlist = new ArrayList<>();
@@ -50,9 +51,9 @@ class Solution001 {
 		return answer;
 	}
 }
-public class Q001 {
+public class Q001check {
 	public static void main(String[] args) {
-		Solution a = new Solution();
+		Solution001 a = new Solution001();
 		System.out.println(a.solution(new int[] {95,95,95,95}, new int[] {4,3,2,1}));
 	}
 

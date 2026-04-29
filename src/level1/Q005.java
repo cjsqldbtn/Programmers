@@ -9,7 +9,7 @@ import java.util.List;
 // 배열 안에 리스트를 넣는 과정에서 노란 경고줄을 확인
 // List<Integer>[] 가 내부적으로 List<?>[] 로 받아들여지면서 오류가 생길 수 있음을 암시
 // 제너릭타입에 대한 공부가 필요.
-class Solution {
+class Solution005 {
     public int solution(int n, int w, int num) {
         List<Integer>[] arr = new ArrayList[w];
         for(int i=0;i<w;i++){

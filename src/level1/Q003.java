@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Arrays;
 // [PCCE 기출문제] 10번 / 공원
 // 행, 열 다 들어갈 수 있는 지 확인해서 리턴.
-
 class Solution003 {
 	// 들어갈 수 있는 자리를 표시할 포인트
     class Point {
