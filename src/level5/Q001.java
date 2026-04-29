@@ -4,15 +4,19 @@ import java.util.HashMap;
 // 방의 개수
 // 이미 가 본 적 있는 점일 때 길이 열려있다면 방의 개수를 추가.
 // 단, 직전에 방문한 점인 경우 추가하지 않는다.
-// 한 칸 내에서 x 경로 일 때 많은 문제를 겪음 -> 결국 좌료를 다시 나눠 해결
+// 한 칸 내에서 x 경로 일 때 많은 문제를 겪음 -> 결국 좌료를 다시 나눠 해결(for문을 또 넣을 수밖에. ..)
 
 // 아쉬운 점
-// 처음 코드를 짤 때 String으로 열린 경로와 닫힌 경로를 저장했는데
-// boolean배열로 저장했으면 좀 더 성능이 좋았을 같다.
-// 직전에 방문한 점을 표시 하는 참조변수가 지저분하다.
+// 1. 처음 짤 때 열린 경로, 닫힌 경로 표시를 String charat()으로 arrows 관리가 쉬워서 그렇게 설정.
+// 하지만, boolean배열로 저장했으면 좀 더 성능이 좋았을 같다.
+// 2. 직전에 방문한 점을 표시 하는 참조변수가 지저분하다.
 
 // 앞으로의 방향
-// 해시에 대한 공부가 되어 있지 않아, x y 값이 같으면 같은 객체다를 설정하는 부분에서 검색의 도움을 받았다.
+// 해시에서 hashCode(), equals() 오버라이딩 공부 필요
+// x y 값이 같으면 같은 객체다를 설정하는 부분에서 검색의 도움을 받았다.
+
+// 개인적 코멘트
+// 답안 제출하고 다른 사람 코드를 보는데 나와 비슷해서 너무 놀람. for(for()) 마저..
 class Solution {
     static HashMap<Point,String> myPoints = new HashMap<>();
     static int x = 0;
@@ -101,7 +105,7 @@ class Solution {
         return answer;
     }
 }
-public class Q01 {
+public class Q001 {
 	public static void main(String[] args) {
 		
 	}
