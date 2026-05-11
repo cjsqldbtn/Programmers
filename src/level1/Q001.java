@@ -1,7 +1,7 @@
 package level1;
 
 import java.util.*;
-// 달리기 경주
+// 문제 제목: << 달리기 경주 (Lv.1) >>
 // 추월한 선수를 계속 찾아가며 순서를 바꾸면 될 문제이나, 시간 초과 발생
 // 해시맵을 둘 만들어서 찾는 시간을 줄임
 
@@ -15,8 +15,8 @@ import java.util.*;
 // 그런데 이거 DB로 관리하게 되지 않나..?
 class Solution001 {
 	public String[] solution(String[] players, String[] callings) {
-		Map<String,Integer> playerMapS = new HashMap<>();
-		Map<Integer,String> playerMapI = new HashMap<>();
+		Map<String,Integer> playerMapS = new HashMap<>(); // 이름이 key인 맵
+		Map<Integer,String> playerMapI = new HashMap<>(); // 등수가 key인 맵
 		int idx = 0;
 		for(String i:players){
 			playerMapS.put(i, idx);

@@ -2,8 +2,8 @@ package level2;
 
 import java.util.ArrayList;
 import java.util.List;
-// 기능개발
-// 개발이 완료되지 않은 기능을 yetlist로 관리
+// 문제 제목: << 기능개발 (Lv.2) >>
+// 개발이 완료되지 않은 기능을 yetList로 관리
 // 완료된 일을 list에서 제거하면서 list 사이즈가 달라져 뒤에 있는 다른 업무가 진행되지 않는 문제를 겪음
 // -> 완료된 일을 -1로 바꿔서 -1을 제거 하는 식으로 해결
 
@@ -16,37 +16,37 @@ import java.util.List;
 // 어느정도 준비가 되면 이 문제 다시 풀어보자.
 class Solution001 {
 	public int[] solution(int[] progresses, int[] speeds) {
-		List<Integer> answerlist = new ArrayList<>();
-		List<Integer> yetlist = new ArrayList<>();
+		List<Integer> answerList = new ArrayList<>(); // 몇개의 기능이 배포되는지 담을 리스트
+		List<Integer> yetList = new ArrayList<>(); // 아직 개발이 완료 되지 않은 기능의 인덱스
 		for(int i=0;i<progresses.length;i++) {
-			yetlist.add(i);
+			yetList.add(i);
 		}
-		for(int i=0;i<yetlist.size();) {
-			while(progresses[yetlist.get(0)]<100) {
-				for(int j=0;j<yetlist.size();j++) {
-					progresses[yetlist.get(j)]+=speeds[yetlist.get(j)];
+		for(int i=0;i<yetList.size();) {
+			while(progresses[yetList.get(0)]<100) { // 전부 개발 될 때까지 진행
+				for(int j=0;j<yetList.size();j++) {
+					progresses[yetList.get(j)]+=speeds[yetList.get(j)];
 				}
-				for(int j=0;j<yetlist.size();j++) {
-					if(j!=0&&progresses[yetlist.get(j)]>=100) {
-						yetlist.set(j,-1);
+				for(int j=0;j<yetList.size();j++) {
+					if(j!=0&&progresses[yetList.get(j)]>=100) {
+						yetList.set(j,-1); // 완료된 기능을 -1 처리
 					}
 				}
-				while (yetlist.contains(-1)) {
-					yetlist.remove(yetlist.indexOf(-1));
+				while (yetList.contains(-1)) {
+					yetList.remove(yetList.indexOf(-1)); // 완료된 기능 지우기
 				}
 			}
-			int cnt = 0;
-			for(int j=yetlist.get(0);j<progresses.length;j++) {
+			int cnt = 0; // 한번에 배포될 완료된 기능의 수
+			for(int j=yetList.get(0);j<progresses.length;j++) {
 				if(progresses[j]<100) break;
 				cnt++;
 			}
-			answerlist.add(cnt);
-			yetlist.remove(0);
+			answerList.add(cnt);
+			yetList.remove(0); // 다음 개발되지 않는 인덱스로 이동
 		}
-		System.out.println(answerlist);
-		int[] answer = new int[answerlist.size()];
+		// System.out.println(answerList);
+		int[] answer = new int[answerList.size()]; // 배열로 변경
 		for(int i=0;i<answer.length;i++) {
-			answer[i]=answerlist.get(i);
+			answer[i]=answerList.get(i);
 		}
 		return answer;
 	}

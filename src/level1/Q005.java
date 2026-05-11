@@ -2,7 +2,7 @@ package level1;
 
 import java.util.ArrayList;
 import java.util.List;
-// 택배 상자 꺼내기
+// 문제 제목: << 택배 상자 꺼내기 (Lv.1) >>
 // 꼬불하게 쌓는 형태 자체를 list에 저장했다.
 
 // 앞으로의 방향
@@ -11,13 +11,13 @@ import java.util.List;
 // 제너릭타입에 대한 공부가 필요.
 class Solution005 {
     public int solution(int n, int w, int num) {
-        List<Integer>[] arr = new ArrayList[w];
-        for(int i=0;i<w;i++){
+        List<Integer>[] arr = new ArrayList[w]; // 열, 행 담아줄 리스트
+        for(int i=0;i<w;i++){ // 각 열에 연결
             arr[i] = new ArrayList<>();
         }
         for(int i=0;i<n;i++){
-            if(i/w%2==0) arr[i%w].add(i+1);
-            else arr[w-1-(i%w)].add(i+1);
+            if(i/w%2==0) arr[i%w].add(i+1); // 짝수행
+            else arr[w-1-(i%w)].add(i+1); // 홀수행
         }
         for(List<Integer> i : arr){
             if(i.contains(num)) {

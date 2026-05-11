@@ -2,7 +2,7 @@ package level2;
 
 import java.util.LinkedList;
 import java.util.Queue;
-// [1차] 캐시
+// 문제 제목: << [1차] 캐시 (Lv.2) >>
 // 해시셋으로 만드려다가 큐가 더 좋을 것 같다 생각이 들었다.
 
 // 앞으로의 방향
