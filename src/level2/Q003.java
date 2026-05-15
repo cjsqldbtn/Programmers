@@ -46,7 +46,7 @@ class Solution003 {
 
 public class Q003 {
 	public static void main(String[] args) {
-		Solution003 s = new Solution();
+		Solution003 s = new Solution003();
 		System.out.println(s.solution(new String[] {"123","12"}));
 	}
 }
