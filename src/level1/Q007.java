@@ -3,8 +3,8 @@ package level1;
 import java.time.LocalTime;
 import java.util.Arrays;
 
-// 문제 제목: << [PCCP 기출문제] 1번 / 동영상 재생기 (Lv.1) >>
-// 오프닝 구간에 있는 경우 건너뛴다 -> 해당 부분은 입력이 없어도 진행되어야하기 때문애 반복적으로 사용될 것이다.
+// 문제 제목: << [PCCP 기출문제] 1번 / 붕대 감기 (Lv.1) >>
+// 수학 계산에 가깝다.
 
 class Solution007 {
     public int solution(int[] bandage, int health, int[][] attacks) {
