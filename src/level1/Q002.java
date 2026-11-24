@@ -18,48 +18,53 @@ class Solution002 {
         Set<String> set = new LinkedHashSet<>();
 
         // 스포일러 문자가 중간에 끊기지 얂게 모두 감싸도록 int[][] 수정
-        for(int i=0;i<spoiler_ranges.length;i++){
+        for (int i = 0; i < spoiler_ranges.length; i++) {
             int start = spoiler_ranges[i][0];
             int end = spoiler_ranges[i][1];
-            if(start!=0&&start!=message.length()-1){
-                if(message.charAt(start)==' '){}
-                else{
-                    while(!(message.charAt(start)==' ')){
+            if (start != 0 && start != message.length() - 1) {
+                if (message.charAt(start) == ' ') {
+                } else {
+                    while (!(message.charAt(start) == ' ')) {
                         start--;
-                        if(start==0) {
+                        if (start == 0) {
                             start--;
                             break;
                         }
                     }
-                    spoiler_ranges[i][0] = start+1;
+                    spoiler_ranges[i][0] = start + 1;
                 }
             }
-            if(end!=message.length()-1){
-                while(!(message.charAt(end)==' ')){
+            if (end != message.length() - 1) {
+                while (!(message.charAt(end) == ' ')) {
                     end++;
-                    if(end==message.length()-1){
+                    if (end == message.length() - 1) {
                         break;
                     }
                 }
             }
             spoiler_ranges[i][1] = end;
-            
+
             // 빌더에 스포일러 문자를 -로 표시
-            if(spoiler_ranges[i][1]==message.length()-1) sb.setCharAt(message.length()-1, '-');
-            sb.replace(spoiler_ranges[i][0], spoiler_ranges[i][1],"-".repeat(spoiler_ranges[i][1]-spoiler_ranges[i][0]));
+            if (spoiler_ranges[i][1] == message.length() - 1)
+                sb.setCharAt(message.length() - 1, '-');
+            sb.replace(spoiler_ranges[i][0], spoiler_ranges[i][1],
+                    "-".repeat(spoiler_ranges[i][1] - spoiler_ranges[i][0]));
 
             // 스포 문자를 집합에 담기
             String temp;
-            if(spoiler_ranges[i][1]==message.length()-1) temp = message.substring(spoiler_ranges[i][0]);
-            else temp = message.substring(spoiler_ranges[i][0],spoiler_ranges[i][1]);
-            if(temp.contains(" ")){ // 여러 단어가 들어갈 경우 나눔
+            if (spoiler_ranges[i][1] == message.length() - 1)
+                temp = message.substring(spoiler_ranges[i][0]);
+            else
+                temp = message.substring(spoiler_ranges[i][0], spoiler_ranges[i][1]);
+            if (temp.contains(" ")) { // 여러 단어가 들어갈 경우 나눔
                 String[] split = temp.split(" ");
-                for(String s : split){
-                    if(s.length()==0) continue;
+                for (String s : split) {
+                    if (s.length() == 0)
+                        continue;
                     set.add(s);
                 }
-            }
-            else set.add(temp);
+            } else
+                set.add(temp);
         }
 
         String chmessage = sb.toString();
@@ -67,24 +72,25 @@ class Solution002 {
         System.out.println(chmessage);
         String[] check = chmessage.split(" "); // 스포 아닌 문자들이 담김
         int answer = 0;
-        for(String i:set){
+        for (String i : set) {
             boolean flag = true;
-            for(String j:check){
-                if(i.equals(j)){
+            for (String j : check) {
+                if (i.equals(j)) {
                     flag = false;
                     break;
                 }
             }
-            if(flag) answer++;
+            if (flag)
+                answer++;
         }
         return answer;
     }
 }
+
 public class Q002 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+    public static void main(String[] args) {
 
-	}
+    }
 
 }

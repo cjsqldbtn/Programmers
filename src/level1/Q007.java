@@ -1,6 +1,5 @@
 package level1;
 
-import java.time.LocalTime;
 import java.util.Arrays;
 
 // 문제 제목: << [PCCP 기출문제] 1번 / 붕대 감기 (Lv.1) >>
