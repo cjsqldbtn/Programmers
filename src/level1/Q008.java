@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-// 문제 제목: 신고 결과 받기
+// 문제 제목: << 카카오 블라인드 채용 : 신고 결과 받기 (Lv.1) >>
 // 동일한 신고 결과는 반영하지 않음 -> 중복 제거가 필요하므로 set 이용
 
 class Solution008 {
