@@ -26,9 +26,9 @@ class Solution003 {
     public int solution(int[] mats, String[][] park) {
         // 각 사이즈에 들어갈 매트마다 위치를 담아줄 리스트 연결
         Arrays.sort(mats); // 매트 크기 정렬
-        List<List> checkmats = new ArrayList<>();
+        List<List<Point>> checkmats = new ArrayList<>();
         for (int i = 0; i < mats.length; i++) {
-            checkmats.add(new ArrayList<Point>());
+            checkmats.add(new ArrayList<>());
         }
 
         // 인덱스오류 방지 공원 확장, 연속된 칸들에 수 라벨링
